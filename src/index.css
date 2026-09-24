@@ -1,0 +1,64 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Figtree', system-ui, sans-serif;
+
+  --color-red: #fe0000;
+  --color-red-deep: #d40000;
+  --color-yellow: #ffcc00;
+  --color-ink: #231313;
+  --color-muted: #5e4a4a;
+  --color-line: #ebdcdc;
+
+  --color-t1: #fe0000;
+  --color-t2: #ffcc00;
+  --color-t3: #231313;
+  --color-t4: #b80000;
+  --color-t5: #e85d00;
+  --color-t6: #7a0000;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body {
+  overflow-x: clip;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #ffffff;
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.container-site {
+  width: 100%;
+  max-width: 1040px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+:where(a, button, input, textarea, select, summary, [role='button']):focus-visible {
+  outline: 3px solid var(--color-yellow);
+  outline-offset: 2px;
+}
+
+::selection {
+  background-color: var(--color-yellow);
+  color: var(--color-ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
