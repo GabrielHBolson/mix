@@ -88,6 +88,8 @@ export interface SiteInfo {
   instagramUrl: string
   whatsappUrl: string
   surveyUrl: string
+  /** Número (com DDI e DDD, só dígitos) que recebe as indicações pelo WhatsApp. */
+  referralWhatsApp: string
   address: string
   mapEmbedUrl: string
   mapLinkUrl: string

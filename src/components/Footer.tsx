@@ -87,7 +87,7 @@ export default function Footer() {
           <span>
             Instituto Mix <span aria-hidden="true">·</span> Passo Fundo Centro
           </span>
-          <nav aria-label="Links do rodapé" className="flex gap-5">
+          <nav aria-label="Links do rodapé" className="flex flex-wrap gap-x-5 gap-y-2">
             <Link to="/" className="transition-colors hover:text-yellow">
               Início
             </Link>
@@ -96,6 +96,9 @@ export default function Footer() {
             </Link>
             <Link to="/trabalhe-conosco" className="transition-colors hover:text-yellow">
               Trabalhe conosco
+            </Link>
+            <Link to="/indicacoes" className="transition-colors hover:text-yellow">
+              Indicações
             </Link>
           </nav>
         </div>

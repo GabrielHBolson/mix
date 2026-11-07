@@ -12,6 +12,7 @@ export const site: SiteInfo = {
   instagramUrl: 'https://www.instagram.com/institutomixpassofundo',
   whatsappUrl: 'https://wa.me/5554992642198?text=Olá! Vim pelo Portal do Aluno.',
   surveyUrl: 'https://jeito.im/Pesquisa26',
+  referralWhatsApp: '5554992642198',
   address,
   mapEmbedUrl: `https://www.google.com/maps?q=${mapQuery}&hl=pt-BR&z=17&output=embed`,
   mapLinkUrl: `https://www.google.com/maps/search/?api=1&query=${mapQuery}`,
@@ -69,4 +70,10 @@ export const jobsCopy = {
     title: 'Quer saber mais ou se candidatar?',
     text: 'Fale com a secretaria.',
   },
+}
+export const referralsCopy = {
+  eyebrow: 'Indique um amigo',
+  title: 'Indicações',
+  subtitle:
+    'Indique seus colegas: eles ganham um curso gratuito e você ganha desconto quando eles se matriculam em um curso pago.',
 }

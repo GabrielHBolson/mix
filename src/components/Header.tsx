@@ -2,9 +2,10 @@ import { useEffect, useRef, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
 const links = [
-  { to: '/', label: 'Início', end: true },
-  { to: '/regras', label: 'Regras', end: false },
-  { to: '/trabalhe-conosco', label: 'Trabalhe conosco', end: false },
+  { to: '/', label: 'Início', short: 'Início', end: true },
+  { to: '/regras', label: 'Regras', short: 'Regras', end: false },
+  { to: '/trabalhe-conosco', label: 'Trabalhe conosco', short: 'Vagas', end: false },
+  { to: '/indicacoes', label: 'Indicações', short: 'Indicar', end: false },
 ]
 
 export default function Header() {
@@ -60,7 +61,7 @@ export default function Header() {
               className="relative h-9 w-9 rounded-full object-contain transition-transform duration-500 ease-[var(--ease-spring)] group-hover:rotate-[-8deg] group-hover:scale-110 sm:h-10 sm:w-10"
             />
           </span>
-          <span className="hidden text-sm font-extrabold leading-tight tracking-tight sm:block sm:text-base">
+          <span className="hidden text-sm font-extrabold leading-tight tracking-tight lg:block lg:text-base">
             Portal Passo Fundo Centro
           </span>
         </NavLink>
@@ -72,14 +73,15 @@ export default function Header() {
                   to={link.to}
                   end={link.end}
                   className={({ isActive }) =>
-                    `relative block rounded-full px-3 py-1.5 text-[13px] font-bold transition-all duration-300 sm:px-4 sm:text-sm ${
+                    `relative block whitespace-nowrap rounded-full px-2.5 py-1.5 text-[13px] font-bold transition-all duration-300 sm:px-4 sm:text-sm ${
                       isActive
                         ? 'bg-yellow text-ink shadow-md shadow-ink/20'
                         : 'text-white/85 hover:bg-white/15 hover:text-white'
                     }`
                   }
                 >
-                  {link.label}
+                  <span className="md:hidden">{link.short}</span>
+                  <span className="hidden md:inline">{link.label}</span>
                 </NavLink>
               </li>
             ))}

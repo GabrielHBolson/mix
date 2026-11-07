@@ -5,6 +5,7 @@ import Header from './components/Header'
 import WhatsAppFloat from './components/WhatsAppFloat'
 import Home from './pages/Home'
 import Jobs from './pages/Jobs'
+import Referrals from './pages/Referrals'
 import Rules from './pages/Rules'
 
 function ScrollToTop() {
@@ -26,6 +27,7 @@ function AnimatedRoutes() {
         <Route path="/" element={<Home />} />
         <Route path="/regras" element={<Rules />} />
         <Route path="/trabalhe-conosco" element={<Jobs />} />
+        <Route path="/indicacoes" element={<Referrals />} />
         <Route path="*" element={<Home />} />
       </Routes>
     </div>
