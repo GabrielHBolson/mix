@@ -14,14 +14,4 @@ export const raffles: Raffle[] = [
     imageAlt:
       'Cartaz da Rota Premiada: scooter elétrica ou R$ 10.800,00 em dinheiro',
   },
-  {
-    title: 'Kit mateiro',
-    badge: 'Sorteio em andamento',
-    highlight: 'Concorra a um kit mateiro.',
-    text: 'Um prêmio para quem gosta de tradição gaúcha. Fique de olho e participe.',
-    featured: true,
-    image: '/images/sorteio_mateira.jpeg',
-    imageAlt: 'Foto do prêmio do sorteio Kit mateiro',
-    fixedImage: true,
-  },
 ]

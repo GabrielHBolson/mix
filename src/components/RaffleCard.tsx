@@ -1,5 +1,5 @@
 import type { Raffle } from '../types'
-import { CheckIcon, MateSvg } from './icons'
+import { CheckIcon } from './icons'
 
 interface RaffleCardProps {
   raffle: Raffle
@@ -36,10 +36,6 @@ export default function RaffleCard({ raffle, reversed = false }: RaffleCardProps
               alt={raffle.imageAlt ?? `Cartaz do sorteio ${raffle.title}`}
               className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1.2s] ease-[var(--ease-spring)] group-hover:scale-110"
             />
-          ) : raffle.art === 'mate' ? (
-            <div className="absolute inset-0 h-full w-full bg-[#2f9e5f]">
-              <MateSvg className="h-full w-full" />
-            </div>
           ) : null}
           <div
             className="absolute inset-0 bg-gradient-to-t from-ink/30 to-transparent"

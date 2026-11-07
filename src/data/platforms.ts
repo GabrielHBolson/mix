@@ -23,10 +23,10 @@ export const platforms: Platform[] = [
     tone: 't4',
   },
   {
-    name: 'MSE Kids',
-    description: 'Portal do aluno Kids',
-    url: 'http://192.168.0.18:8082/portalAluno/',
-    initials: 'Kids',
+    name: 'MSE',
+    description: 'Portal do aluno MSE',
+    url: 'https://ead.grupooportunidade.com.br/',
+    initials: 'MSE',
     tone: 't3',
   },
   {

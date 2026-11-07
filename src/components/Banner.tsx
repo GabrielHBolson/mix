@@ -19,13 +19,26 @@ export default function Banner() {
 
       <div className="container-site grid items-center gap-10 pb-24 pt-12 sm:pt-16 md:grid-cols-[1.15fr_1fr] md:pb-32 md:pt-20">
         <div>
-          <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.16em] ring-1 ring-white/25 backdrop-blur animate-pop">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-yellow" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-yellow" />
-            </span>
-            Instituto Mix · Passo Fundo Centro
-          </span>
+          <div className="animate-pop">
+            <button
+              type="button"
+              onClick={() =>
+                document.getElementById('pesquisa')?.scrollIntoView({ behavior: 'smooth' })
+              }
+              className="group inline-flex cursor-pointer items-center gap-2 rounded-full bg-white/15 py-1.5 pl-1.5 pr-4 text-left text-xs font-bold ring-1 ring-white/25 backdrop-blur transition-all duration-300 hover:bg-white/25 sm:text-sm"
+            >
+              <span className="rounded-full bg-yellow px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-wider text-ink sm:text-xs">
+                Novo
+              </span>
+              Pesquisa de satisfação: concorra a uma JBL GO 2
+              <span
+                className="transition-transform duration-300 group-hover:translate-x-1"
+                aria-hidden="true"
+              >
+                →
+              </span>
+            </button>
+          </div>
 
           <h1 className="mt-5 text-5xl font-extrabold leading-[1.02] tracking-tight sm:text-6xl lg:text-7xl">
             <span className="block animate-pop [animation-delay:120ms]">Portal</span>
@@ -78,7 +91,7 @@ export default function Banner() {
           <img
             src="/images/logo_instituto_mix.png"
             alt="Logo completa do Instituto Mix"
-            className="relative w-full drop-shadow-[0_25px_35px_rgba(35,19,19,0.35)] animate-float"
+            className="relative w-full rounded-[2.5rem] shadow-[0_30px_60px_-15px_rgba(35,19,19,0.5)] ring-1 ring-white/20 animate-float"
           />
         </div>
       </div>

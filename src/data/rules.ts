@@ -14,5 +14,4 @@ export const rules: Rule[] = [
   { emoji: '💡', text: 'Tente completar no mínimo duas aulas' },
   { emoji: '🖊️', text: 'Faça as atividades complementares da apostila' },
   { emoji: '🖥️', text: 'Ao final da aula, sair da conta e desligar o computador' },
-  { emoji: '💸', text: 'Retire o Money Mix com o(a) professor(a)' },
 ]

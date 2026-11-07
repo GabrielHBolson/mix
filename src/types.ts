@@ -9,18 +9,6 @@ export interface Platform {
   image?: string
 }
 
-export interface MoneyPoint {
-  emoji: string
-  label: string
-}
-
-export interface MoneyMix {
-  title: string
-  subtitle: string
-  points: MoneyPoint[]
-  footer: string
-}
-
 export interface Raffle {
   title: string
   badge: string
@@ -32,7 +20,6 @@ export interface Raffle {
   featured: boolean
   image?: string
   imageAlt?: string
-  art?: 'mate'
   fixedImage?: boolean
 }
 
@@ -53,6 +40,8 @@ export interface EventCard {
   badge: string
   image: string
   imageAlt?: string
+  /** Arte com texto próprio: exibida inteira, sem título sobreposto. */
+  poster?: boolean
   highlight: string
   text: string
   points: EventPoint[]

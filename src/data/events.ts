@@ -2,35 +2,25 @@ import type { EventCard } from '../types'
 
 export const events: EventCard[] = [
   {
-    title: 'Setembro Amarelo',
+    title: 'Novembro Azul',
     badge: 'Mês de conscientização',
-    image: '/images/setembro_amarelo.webp',
-    imageAlt: 'Campanha Setembro Amarelo: valorização da vida e prevenção ao suicídio',
-    highlight: 'Você não está só. Pedir ajuda é um ato de coragem.',
-    text: 'O Setembro Amarelo é a campanha de prevenção do suicídio e de valorização da vida. Falar sobre saúde mental, sem julgamento e sem tabu, salva vidas. Tristeza, ansiedade e cansaço acontecem com muita gente, e existe apoio.',
+    image: '/images/novembro_azul.webp',
+    poster: true,
+    imageAlt:
+      'Cartaz do Novembro Azul: laço azul com a mensagem Cuide-se. Previna-se. Faça o exame. A saúde também é coisa de homem!',
+    highlight: 'Cuidar da saúde também é coisa de homem.',
+    text: 'O Novembro Azul é a campanha de conscientização sobre a saúde do homem e a prevenção do câncer de próstata. Quando descoberto cedo, as chances de cura são muito maiores. Converse com quem você ama e incentive a ida ao médico.',
     points: [
-      { emoji: '🗣️', label: 'Escute com atenção e sem julgar' },
-      { emoji: '🤝', label: 'Mostre que você se importa e está por perto' },
-      { emoji: '🙏', label: 'Incentive a busca por ajuda profissional' },
+      { emoji: '🩺', label: 'Faça check-ups regulares e converse com o médico' },
+      { emoji: '🎂', label: 'A partir dos 50 anos (ou 45, com histórico na família), procure avaliação' },
+      { emoji: '🥗', label: 'Alimentação equilibrada, atividade física e menos álcool e cigarro' },
     ],
     help: {
-      boxText: 'Precisa conversar agora? Ligue para o CVV, o atendimento é 24 horas e gratuito.',
-      buttonLabel: 'Ligar 188',
-      buttonHref: 'tel:188',
-      note: 'Em emergência, ligue 192 (SAMU). Na escola, você também pode falar com o(a) professor(a) ou com a coordenação pedagógica.',
+      boxText:
+        'Tem dúvidas ou quer saber onde fazer os exames? Procure a Unidade Básica de Saúde (UBS) mais próxima ou ligue para o Disque Saúde.',
+      buttonLabel: 'Ligar 136',
+      buttonHref: 'tel:136',
+      note: 'O atendimento pelo SUS é gratuito. Compartilhe essa informação com os homens da sua família.',
     },
-  },
-  {
-    title: 'Dia Farroupilha',
-    badge: '20 de setembro',
-    image: '/images/gaucho_mes.webp',
-    imageAlt: 'Dia Farroupilha: tradição e cultura gaúcha no Rio Grande do Sul',
-    highlight: 'Dia do Gaúcho: a história e a cultura do Rio Grande do Sul.',
-    text: 'Em 20 de setembro de 1835 começou a Revolução Farroupilha, que durou dez anos e marcou a história do estado. A data é lembrada todos os anos, e a Semana Farroupilha, de 14 a 20 de setembro, enche o Rio Grande do Sul de festa e tradição.',
-    points: [
-      { emoji: '🧉', label: 'Chimarrão, churrasco e o café de galpão' },
-      { emoji: '🎵', label: 'Música e dança tradicionalista, como no CTG' },
-      { emoji: '🏇', label: 'Trajes típicos: bombacha e vestido de prenda' },
-    ],
   },
 ]

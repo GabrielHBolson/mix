@@ -1,5 +1,8 @@
 import type { SiteInfo } from '../types'
 
+const address = 'Av. Brasil Centro, 178 - Centro, Passo Fundo - RS'
+const mapQuery = encodeURIComponent(address)
+
 export const site: SiteInfo = {
   title: 'Portal Passo Fundo Centro',
   email: 'interativoimpassofundo@gmail.com',
@@ -8,18 +11,16 @@ export const site: SiteInfo = {
   instagram: '@institutomixpassofundo',
   instagramUrl: 'https://www.instagram.com/institutomixpassofundo',
   whatsappUrl: 'https://wa.me/5554992642198?text=Olá! Vim pelo Portal do Aluno.',
-  surveyUrl:
-    'https://docs.google.com/forms/d/e/1FAIpQLSfqY-TkRaTigMoNT6IdgPhHgTRqS1qkZLPX5r-z__-8Xb2qlA/viewform?hl=pt-BR',
-  address: 'Av. Brasil Centro, 178 - Centro, Passo Fundo - RS',
-  mapEmbedUrl: 'https://www.google.com/maps?q=-28.2618,-52.4082&hl=pt-BR&z=16&output=embed',
-  mapLinkUrl: 'https://www.google.com/maps?q=-28.2618,-52.4082',
+  surveyUrl: 'https://jeito.im/Pesquisa26',
+  address,
+  mapEmbedUrl: `https://www.google.com/maps?q=${mapQuery}&hl=pt-BR&z=17&output=embed`,
+  mapLinkUrl: `https://www.google.com/maps/search/?api=1&query=${mapQuery}`,
 }
 
 export const homeCopy = {
   platforms: {
     title: 'Acesse sua plataforma',
     subtitle: 'Toque no card do seu curso para entrar com o seu login.',
-    networkNote: 'O acesso ao MSE Kids funciona apenas conectado à rede da escola.',
   },
   raffles: {
     title: 'Sorteios em andamento',
@@ -39,9 +40,17 @@ export const homeCopy = {
     title: 'Deixe seu feedback',
     subtitle:
       'Conte como está sendo a sua experiência com os cursos. Você pode enviar um elogio, uma sugestão ou uma reclamação.',
-    cardTitle: 'Pesquisa de satisfação',
+    badge: 'Aberta até 30 de novembro',
+    cardTitle: 'Pesquisa de satisfação 2026/2',
     cardText:
-      'Leva poucos minutos. Identifique-se ao responder: quem responde a pesquisa ganha Money Mix.',
+      'Leva poucos minutos. Responda, conte o que você acha dos cursos e concorra a um prêmio.',
+    periodStart: { day: '01', month: 'Novembro' },
+    periodEnd: { day: '30', month: 'Novembro' },
+    prizeLabel: 'Participe e concorra a 1 caixa de som',
+    prize: 'JBL GO 2',
+    image: '/images/pesquisa_satisfacao_2026_2.webp',
+    imageAlt:
+      'Cartaz da Pesquisa de Satisfação 2026/2: de 1º a 30 de novembro, participe e concorra a uma caixa de som JBL GO 2',
     buttonLabel: 'Responder pesquisa',
   },
 }

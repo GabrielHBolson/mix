@@ -3,7 +3,6 @@ import ApplyBlock from '../components/ApplyBlock'
 import Banner from '../components/Banner'
 import EventCard from '../components/EventCard'
 import Marquee from '../components/Marquee'
-import MoneyMixCard from '../components/MoneyMixCard'
 import PlatformCard from '../components/PlatformCard'
 import RaffleCard from '../components/RaffleCard'
 import Reveal from '../components/Reveal'
@@ -33,27 +32,25 @@ export default function Home() {
             title={homeCopy.platforms.title}
             subtitle={homeCopy.platforms.subtitle}
           />
-          <div className="mt-8 grid grid-cols-[repeat(auto-fill,minmax(230px,1fr))] gap-5 sm:gap-6">
+          <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-[repeat(auto-fill,minmax(230px,1fr))] sm:gap-6">
             {platforms.map((platform, i) => (
               <Reveal key={platform.name} delay={(i % 3) * 90}>
                 <PlatformCard platform={platform} />
               </Reveal>
             ))}
           </div>
-          <Reveal>
-            <p className="mt-6 flex items-start gap-2 rounded-2xl bg-cream px-4 py-3 text-sm text-muted">
-              <span
-                className="mt-0.5 grid h-4 w-4 shrink-0 place-items-center rounded-full border border-current text-[10px] font-bold"
-                aria-hidden="true"
-              >
-                i
-              </span>
-              {homeCopy.platforms.networkNote}
-            </p>
-          </Reveal>
         </section>
 
-        <MoneyMixCard />
+        <section id="pesquisa" className="scroll-mt-24">
+          <Section
+            eyebrow="Sua opinião vale prêmio"
+            title={homeCopy.survey.title}
+            subtitle={homeCopy.survey.subtitle}
+          />
+          <Reveal variant="zoom" className="mt-8">
+            <SurveyCard />
+          </Reveal>
+        </section>
 
         <section>
           <Section
@@ -81,10 +78,10 @@ export default function Home() {
             title={homeCopy.events.title}
             subtitle={homeCopy.events.subtitle}
           />
-          <div className="mt-8 grid gap-6 sm:grid-cols-2">
+          <div className={`mt-8 grid gap-6 ${events.length > 1 ? 'sm:grid-cols-2' : ''}`}>
             {events.map((event, i) => (
               <Reveal key={event.title} delay={i * 120}>
-                <EventCard event={event} />
+                <EventCard event={event} wide={events.length === 1} />
               </Reveal>
             ))}
           </div>
@@ -103,17 +100,6 @@ export default function Home() {
               </Reveal>
             ))}
           </div>
-        </section>
-
-        <section>
-          <Section
-            eyebrow="Sua opinião"
-            title={homeCopy.survey.title}
-            subtitle={homeCopy.survey.subtitle}
-          />
-          <Reveal variant="zoom" className="mt-8">
-            <SurveyCard />
-          </Reveal>
         </section>
       </div>
     </>

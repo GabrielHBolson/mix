@@ -2,29 +2,54 @@ import type { EventCard as EventCardData } from '../types'
 
 interface EventCardProps {
   event: EventCardData
+  wide?: boolean
 }
 
-export default function EventCard({ event }: EventCardProps) {
+export default function EventCard({ event, wide = false }: EventCardProps) {
   return (
-    <article className="group flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-white shadow-sm transition-all duration-500 ease-[var(--ease-spring)] hover:-translate-y-2 hover:shadow-2xl hover:shadow-ink/10">
-      <div className="relative aspect-[4/3] overflow-hidden">
-        <img
-          src={event.image}
-          alt={event.imageAlt ?? event.title}
-          className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1.2s] ease-[var(--ease-spring)] group-hover:scale-110"
-        />
+    <article
+      className={`group flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-white shadow-sm transition-all duration-500 ease-[var(--ease-spring)] hover:-translate-y-2 hover:shadow-2xl hover:shadow-ink/10 ${
+        wide ? 'md:grid md:grid-cols-2' : ''
+      }`}
+    >
+      {event.poster ? (
+        <div className="relative grid place-items-center overflow-hidden bg-[#eef1f7]">
+          <img
+            src={event.image}
+            alt={event.imageAlt ?? event.title}
+            className="aspect-square w-full object-cover transition-transform duration-[1.2s] ease-[var(--ease-spring)] group-hover:scale-105"
+          />
+        </div>
+      ) : (
         <div
-          className="absolute inset-0 bg-gradient-to-t from-ink/60 via-ink/0 to-transparent"
-          aria-hidden="true"
-        />
-        <span className="absolute left-4 top-4 rounded-full bg-yellow px-3 py-1 text-xs font-bold uppercase tracking-wide text-ink shadow-md">
-          {event.badge}
-        </span>
-        <h3 className="absolute inset-x-5 bottom-4 text-2xl font-extrabold tracking-tight text-white drop-shadow-md">
-          {event.title}
-        </h3>
-      </div>
-      <div className="flex flex-1 flex-col gap-4 p-6">
+          className={`relative aspect-[4/3] overflow-hidden ${wide ? 'md:aspect-auto md:min-h-full' : ''}`}
+        >
+          <img
+            src={event.image}
+            alt={event.imageAlt ?? event.title}
+            className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1.2s] ease-[var(--ease-spring)] group-hover:scale-110"
+          />
+          <div
+            className="absolute inset-0 bg-gradient-to-t from-ink/60 via-ink/0 to-transparent"
+            aria-hidden="true"
+          />
+          <span className="absolute left-4 top-4 rounded-full bg-yellow px-3 py-1 text-xs font-bold uppercase tracking-wide text-ink shadow-md">
+            {event.badge}
+          </span>
+          <h3 className="absolute inset-x-5 bottom-4 text-2xl font-extrabold tracking-tight text-white drop-shadow-md">
+            {event.title}
+          </h3>
+        </div>
+      )}
+      <div className="flex flex-1 flex-col gap-4 p-6 sm:p-8">
+        {event.poster ? (
+          <div>
+            <span className="inline-flex rounded-full bg-[#1d4ed8] px-3 py-1 text-xs font-bold uppercase tracking-wide text-white">
+              {event.badge}
+            </span>
+            <h3 className="mt-3 text-3xl font-extrabold tracking-tight text-ink">{event.title}</h3>
+          </div>
+        ) : null}
         <p className="font-bold text-red">{event.highlight}</p>
         <p className="text-muted">{event.text}</p>
 

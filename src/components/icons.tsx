@@ -37,38 +37,3 @@ export function WhatsAppIcon({ className }: IconProps) {
     </svg>
   )
 }
-
-export function MateSvg({ className }: IconProps) {
-  return (
-    <svg
-      viewBox="0 0 640 640"
-      preserveAspectRatio="xMidYMid slice"
-      role="img"
-      aria-label="Ilustração de um kit mateiro com cuia, bomba e garrafa térmica"
-      className={className}
-    >
-      <rect width="640" height="640" fill="#2f9e5f" />
-      <circle cx="540" cy="110" r="160" fill="#ffffff" opacity="0.08" />
-      <circle cx="90" cy="540" r="190" fill="#1c5c38" opacity="0.25" />
-
-      <g>
-        <path d="M150 380h230c0 96-52 170-115 170S150 476 150 380z" fill="#6f4222" />
-        <ellipse cx="265" cy="380" rx="115" ry="26" fill="#1f2a24" />
-        <path d="M150 380h230v-14c-14 8-28 12-44 12H194c-16 0-30-4-44-12z" fill="#57341a" />
-      </g>
-
-      <g>
-        <rect x="210" y="330" width="30" height="200" rx="15" transform="rotate(-22 225 430)" fill="#b08a3e" />
-        <circle cx="238" cy="318" r="16" fill="#c7a252" />
-        <circle cx="238" cy="318" r="8" fill="#2f9e5f" />
-      </g>
-
-      <g>
-        <rect x="430" y="180" width="120" height="330" rx="34" fill="#ffffff" />
-        <path d="M430 340h120v14H430z" fill="#bfe6d3" />
-        <path d="M430 430h120v14H430z" fill="#bfe6d3" />
-        <path d="M448 180h84v40h-84z" fill="#d8efe4" />
-      </g>
-    </svg>
-  )
-}
