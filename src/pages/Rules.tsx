@@ -1,4 +1,6 @@
 import { useEffect } from 'react'
+import PageHero from '../components/PageHero'
+import Reveal from '../components/Reveal'
 import RuleItem from '../components/RuleItem'
 import { rules } from '../data/rules'
 import { rulesCopy, site } from '../data/site'
@@ -9,16 +11,17 @@ export default function Rules() {
   }, [])
 
   return (
-    <div className="container-site py-12">
-      <h1 className="text-3xl font-extrabold tracking-tight text-ink sm:text-4xl">
-        {rulesCopy.title}
-      </h1>
-      <p className="mt-2 text-muted">{rulesCopy.subtitle}</p>
-      <ol className="mt-8 flex max-w-[720px] flex-col gap-4">
-        {rules.map((rule) => (
-          <RuleItem key={rule.text} rule={rule} />
-        ))}
-      </ol>
-    </div>
+    <>
+      <PageHero eyebrow="Combinados" title={rulesCopy.title} subtitle={rulesCopy.subtitle} />
+      <div className="container-site py-14 sm:py-16">
+        <ol className="grid gap-4 md:grid-cols-2">
+          {rules.map((rule, i) => (
+            <Reveal as="li" key={rule.text} delay={(i % 2) * 100}>
+              <RuleItem rule={rule} index={i} />
+            </Reveal>
+          ))}
+        </ol>
+      </div>
+    </>
   )
 }

@@ -1,12 +1,11 @@
 import { useEffect } from 'react'
 import ApplyBlock from '../components/ApplyBlock'
 import JobCard from '../components/JobCard'
+import PageHero from '../components/PageHero'
+import Reveal from '../components/Reveal'
+import Section from '../components/Section'
 import { CheckIcon } from '../components/icons'
-import {
-  generalRequirements,
-  jobFeature,
-  jobOpenings,
-} from '../data/jobs'
+import { generalRequirements, jobFeature, jobOpenings } from '../data/jobs'
 import { jobsCopy, site } from '../data/site'
 
 export default function Jobs() {
@@ -15,46 +14,45 @@ export default function Jobs() {
   }, [])
 
   return (
-    <div className="container-site flex flex-col gap-16 py-12">
-      <section>
-        <h1 className="text-3xl font-extrabold tracking-tight text-ink sm:text-4xl">
-          {jobsCopy.title}
-        </h1>
-        <p className="mt-2 text-muted">{jobsCopy.subtitle}</p>
-      </section>
+    <>
+      <PageHero eyebrow="Carreiras" title={jobsCopy.title} subtitle={jobsCopy.subtitle} />
+      <div className="container-site flex flex-col gap-20 py-14 sm:py-16">
+        <Reveal variant="zoom">
+          <JobCard job={jobFeature} />
+        </Reveal>
 
-      <section>
-        <JobCard job={jobFeature} />
-      </section>
-
-      <section>
-        <h2 className="text-2xl font-extrabold tracking-tight text-ink sm:text-3xl">
-          {jobsCopy.openingsTitle}
-        </h2>
-        <div className="mt-6 grid gap-5 lg:grid-cols-3">
-          {jobOpenings.map((job) => (
-            <JobCard key={job.title} job={job} />
-          ))}
-        </div>
-      </section>
-
-      <section>
-        <h2 className="text-2xl font-extrabold tracking-tight text-ink sm:text-3xl">
-          {jobsCopy.generalTitle}
-        </h2>
-        <div className="mt-6 max-w-[720px] rounded-2xl border border-line p-6">
-          <ul className="flex flex-col gap-2">
-            {generalRequirements.map((item) => (
-              <li key={item} className="flex items-start gap-2 text-sm font-medium text-ink">
-                <CheckIcon className="mt-1 h-4 w-4 shrink-0 text-red" />
-                <span>{item}</span>
-              </li>
+        <section>
+          <Section eyebrow="Oportunidades" title={jobsCopy.openingsTitle} />
+          <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {jobOpenings.map((job, i) => (
+              <Reveal key={job.title} delay={(i % 3) * 110}>
+                <JobCard job={job} />
+              </Reveal>
             ))}
-          </ul>
-        </div>
-      </section>
+          </div>
+        </section>
 
-      <ApplyBlock title={jobsCopy.apply.title} text={jobsCopy.apply.text} />
-    </div>
+        <section>
+          <Section eyebrow="O que buscamos" title={jobsCopy.generalTitle} />
+          <Reveal className="mt-8">
+            <ul className="grid gap-3 sm:grid-cols-2">
+              {generalRequirements.map((item) => (
+                <li
+                  key={item}
+                  className="flex items-start gap-3 rounded-2xl border border-line bg-white p-4 text-sm font-medium text-ink transition-all duration-300 hover:-translate-y-0.5 hover:border-yellow hover:bg-cream"
+                >
+                  <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-red text-white">
+                    <CheckIcon className="h-3.5 w-3.5" />
+                  </span>
+                  <span className="pt-0.5">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+        </section>
+
+        <ApplyBlock title={jobsCopy.apply.title} text={jobsCopy.apply.text} />
+      </div>
+    </>
   )
 }
