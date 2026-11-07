@@ -13,6 +13,7 @@ export const site: SiteInfo = {
   whatsappUrl: 'https://wa.me/5554992642198?text=Olá! Vim pelo Portal do Aluno.',
   surveyUrl: 'https://jeito.im/Pesquisa26',
   referralWhatsApp: '5554992642198',
+  publicUrl: '',
   address,
   mapEmbedUrl: `https://www.google.com/maps?q=${mapQuery}&hl=pt-BR&z=17&output=embed`,
   mapLinkUrl: `https://www.google.com/maps/search/?api=1&query=${mapQuery}`,

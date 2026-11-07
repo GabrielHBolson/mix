@@ -90,6 +90,8 @@ export interface SiteInfo {
   surveyUrl: string
   /** Número (com DDI e DDD, só dígitos) que recebe as indicações pelo WhatsApp. */
   referralWhatsApp: string
+  /** Endereço público do portal para o QR code. Vazio: usa o endereço da página aberta. */
+  publicUrl: string
   address: string
   mapEmbedUrl: string
   mapLinkUrl: string

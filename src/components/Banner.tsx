@@ -1,5 +1,6 @@
 import { site } from '../data/site'
 import { CommaIcon, WhatsAppIcon } from './icons'
+import SiteQrCode from './SiteQrCode'
 
 export default function Banner() {
   return (
@@ -76,6 +77,10 @@ export default function Banner() {
               <WhatsAppIcon className="h-5 w-5" />
               Secretaria
             </a>
+          </div>
+
+          <div className="mt-8 hidden animate-pop [animation-delay:600ms] md:block">
+            <SiteQrCode />
           </div>
         </div>
 
